@@ -18,17 +18,14 @@ class Program
         // 3. Attempt to play greeting wav file
         audio.PlayGreeting(audioFilePath);
         
-        // 4. Display the UI elements
+        // 4. Display initial System Boot visuals
         ui.DisplayLogo();
         ui.PrintHeader("System Initialisation");
-        
-        // 5. Test the typing effect
         ui.TypeLine("System booted successfully. All security protocols active.");
-        ui.TypeLine("Connecting to user terminal...");
         
-        // 6. Test warning format
-        ui.PrintWarning("Awaiting user input sequence.");
-        
-        Console.ReadKey();
+        // 5. Instantiate and start chatbot engine
+        // Pass 'ui' into engine so it can use typing and colour effects
+        ChatbotEngine engine = new ChatbotEngine(ui);
+        engine.Start();
     }
 }
