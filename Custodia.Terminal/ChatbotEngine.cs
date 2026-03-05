@@ -36,6 +36,7 @@ public class ChatbotEngine
         }
         
         _ui.PrintHeader("Secure Connection Established");
+        _ui.DisplayWelcome();
         _ui.TypeLine($"Welcome, {_userName}. I am Custodia, your Cybersecurity awareness assistant.");
         _ui.TypeLine("I can help you identify phishing, manage passwords, and browse safely.");
         _ui.TypeLine("What would you like to know today? (Type 'exit' to disconnect)");

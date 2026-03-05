@@ -24,6 +24,22 @@ $$ |  $$\ $$ |  $$ | \____$$\   $$ |$$\ $$ |  $$ |$$ |  $$ |$$ |$$  __$$ |
         Console.ResetColor();
     }
 
+    /// <summary>
+    /// Displays a ASCII art welcome message once username is established
+    /// </summary>
+    public void DisplayWelcome()
+    {
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine(@"
+░  ░░░░  ░░        ░░  ░░░░░░░░░      ░░░░      ░░░  ░░░░  ░░        ░
+▒  ▒  ▒  ▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒   ▒▒   ▒▒  ▒▒▒▒▒▒▒
+▓        ▓▓      ▓▓▓▓  ▓▓▓▓▓▓▓▓  ▓▓▓▓▓▓▓▓  ▓▓▓▓  ▓▓        ▓▓      ▓▓▓
+█   ██   ██  ████████  ████████  ████  ██  ████  ██  █  █  ██  ███████
+█  ████  ██        ██        ███      ████      ███  ████  ██        █
+                                                                      ");
+        Console.ResetColor();
+    }
+
     
     /// <summary>
     /// Prints a structured section header to separate conversation topics
@@ -43,7 +59,7 @@ $$ |  $$\ $$ |  $$ | \____$$\   $$ |$$\ $$ |  $$ |$$ |  $$ |$$ |$$  __$$ |
     /// <summary>
     /// Simulates a human typing effect by printing characters with a slight delay
     /// </summary>
-    public void TypeLine(string message, int delayMs = 30)
+    public void TypeLine(string message, int delayMs = 25)
     {
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write("Custodia > ");
