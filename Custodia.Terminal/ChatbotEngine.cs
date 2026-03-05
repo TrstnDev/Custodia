@@ -1,4 +1,5 @@
 using System;
+using Custodia.Core;
 
 namespace Custodia.Terminal;
 
@@ -21,7 +22,7 @@ public class ChatbotEngine
         _ui.PrintHeader("User Authentication");
         _ui.TypeLine("Please enter your Name:");
 
-        Console.ForegroundColor = ConsoleColor.White;
+        Console.ForegroundColor = ConsoleColor.Black;
         Console.Write("> ");
         _userName = Console.ReadLine()?.Trim() ?? string.Empty;
         
@@ -29,7 +30,7 @@ public class ChatbotEngine
         while (string.IsNullOrEmpty(_userName))
         {
             _ui.PrintWarning("Designation cannot be empty. Please enter a valid name:");
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.Write("> ");
             _userName = Console.ReadLine()?.Trim() ?? string.Empty;
         }
@@ -51,7 +52,7 @@ public class ChatbotEngine
 
         while (isConnected)
         {
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.Write($"\n[{_userName}] > ");
             string input = Console.ReadLine()?.Trim() ?? string.Empty;
             
@@ -73,7 +74,7 @@ public class ChatbotEngine
             
             // TODO: Connect knowledge base/response dictionary here
             _ui.TypeLine($"[Processing query regarding: '{input}']");
-            _ui.TypeLine("I am still loading my cybersecurity database. Please stand by for the next update.");
+            _ui.TypeLine(CyberKnowledgeBase.GetResponse(input));
         }
     }
 }

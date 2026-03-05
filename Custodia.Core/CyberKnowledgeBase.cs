@@ -9,7 +9,7 @@ public class CyberKnowledgeBase
     /// </summary>
     /// <param name="input">String input from the user.</param>
     /// <returns>Formatted response string.</returns>
-    public string GetResponse(string input)
+    public static string GetResponse(string input)
     {
         // Normalise the input to lowercase to make keyword matching easier
         string normalisedInput = input.ToLowerInvariant();
@@ -48,7 +48,7 @@ public class CyberKnowledgeBase
         }
 
         if (normalisedInput.Contains("link") || normalisedInput.Contains("browsing") ||
-            normalisedInput.Contains("website"))
+            normalisedInput.Contains("website") || normalisedInput.Contains("internet") || normalisedInput.Contains("web"))
         {
             return
                 "[SECURITY TIP - SAFE BROWSING]: Before clicking a link, hover over it to see the actual URL. Ensure the website uses 'https://' (look for a padlock icon). Be extremely cautious of shortened URLs or links sent via unsolicited messages.";
