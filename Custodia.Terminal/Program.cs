@@ -20,7 +20,7 @@ class Program
         
         // 4. Display initial System Boot visuals
         ui.DisplayLogo();
-        ui.PrintHeader("System Initialisation");
+        ui.PrintHeader("System Boot");
         ui.TypeLine("System booted successfully. All security protocols active.");
         
         // 5. Instantiate and start chatbot engine
